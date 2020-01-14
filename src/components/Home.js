@@ -7,10 +7,13 @@ export default class Home extends Component {
         this.state={
                 index:props.index,
                 name:props.name,
-                price:props.price
+                price:props.price,
+                amount:props.amount
         }
       }
-    
+    addItem = () =>{
+        this.props.addtoCart(this.state.index);
+    }
     render() {
         return (
             
@@ -22,7 +25,7 @@ export default class Home extends Component {
                     <div className="col-3"></div>
                     <p className="col-2 prodPrice">{this.state.price}&#x20aa;</p>
                     <div className="col-1"></div>
-                    <button className="col-1 btn-info">+</button>
+                    <button onClick={this.addItem} className="col-1 btn-info">+</button>
                 </div>
 
                 <div className="col-5"></div>

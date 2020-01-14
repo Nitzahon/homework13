@@ -7,23 +7,46 @@
   pointer-events: none;
 }
 
-.titleCard{
-  
+.titleCard {
   text-align: center;
   font-size: 5rem;
 }
-.blueRow{
-  background-color: darkcyan;
+.blueRow {
+  background-color: royalblue;
   border-color: darkslategray;
-  border-width: .5rem;
-  border-radius: .5rem;
+  border-width: 0.5rem;
+  border-radius: 0.5rem;
   border-style: solid;
-  margin: .5rem;
-  padding-top: .25rem;
+  margin: 0.5rem;
+  padding-top: 0.25rem;
   text-align: center;
   color: white;
-
 }
-.prodName{
+.prodName {
   text-align: left;
+}
+.products {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.homeRow > div, .homebtn, .cartbtn, .titleCardContainer{
+  border: 1px solid;
+  border-collapse: collapse;
+}
+.homeRow {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+.spListDesc {
+  border-radius: 0.5rem;
+  border: 1px solid;
+  color: white;
+  background-color: royalblue;
+  width: 30%;
+  text-align: center;
+  margin-top: 33%;
+  font-size: 2rem;
+  font-weight: 700;
 }
