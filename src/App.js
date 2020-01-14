@@ -1,8 +1,8 @@
 import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import home from "./home.svg";
 import supermarket from "./supermarket.svg";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Cart from "./components/Cart";
 import Home from "./components/Home.js";
 
@@ -55,11 +55,7 @@ export default class App extends Component {
   };
   show = () => {
     if (this.state.flag === true) {
-      let passArr = [
-        ...this.state.products.filter(post => {
-          return post.amount != 0;
-        })
-      ];
+
       return (
         <div>
           <h2>Cart</h2>
@@ -80,7 +76,7 @@ export default class App extends Component {
               );
             
             })}
-          <div>Total price: {this.state.total}</div>
+          <div>Total price: {this.state.total}&#x20aa;</div>
           <div>
             <button onClick={this.buy}> Buy</button>
           </div>
@@ -95,6 +91,7 @@ export default class App extends Component {
               <div className="col-6  products">List of products</div>
               <div className="col-5"></div>
             </div>
+
             {this.state.products.map((element, i) => {
               return (
                 <Home

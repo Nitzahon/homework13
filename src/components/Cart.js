@@ -12,7 +12,7 @@ export default class Cart extends Component {
     render() {
         return (
             <div>
-    <h2>{this.props.name} price:{this.props.price}  amount:{this.props.amount}  subtotal:{this.props.subtotal}</h2>
+    <h2>{this.props.name} {this.props.amount} x {this.props.price} &#x20aa; subtotal:{this.props.subtotal} &#x20aa;</h2>
             
             </div>
         )
