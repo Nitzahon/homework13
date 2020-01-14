@@ -37,7 +37,7 @@ export default class App extends Component {
     ],
     total: 0
   };
-  atc = (ind) => {
+  atc = ind => {
     let temp = [...this.state.products];
     temp[ind].amount++;
     temp[ind].subtotal += temp[ind].price;
@@ -45,47 +45,64 @@ export default class App extends Component {
     this.setState({ products: [...temp] });
   };
   buy = () => {
-    this.setState({total:0});
-    let temp = [...this.state.products].map((element)=>{
-      element.amount=0;
-      element.subtotal=0;
-      return(element)
+    this.setState({ total: 0 });
+    let temp = [...this.state.products].map(element => {
+      element.amount = 0;
+      element.subtotal = 0;
+      return element;
     });
-    this.setState({products:[...temp]});
+    this.setState({ products: [...temp] });
   };
   show = () => {
     if (this.state.flag === true) {
-
       return (
         <div>
-          <h2>Cart</h2>
-          {this.state.products.filter((element)=>{
-            return(
-              element.amount!=0
-            );
-          }).map((element, i) => {
-          
-            return (
-                <Cart 
-                  name={element.name}
-                  price={element.price}
-                  amount={element.amount}
-                  index={i}
-                  subtotal={element.subtotal}
-                />
-              );
-            
-            })}
-          <div>Total price: {this.state.total}&#x20aa;</div>
-          <div>
-            <button onClick={this.buy}> Buy</button>
+          <div className="row homeRow">
+            <div className="col-4">
+              <div className="row">
+                <div className="col-5 products">Cart</div>
+                <div className="col-2"></div>
+                <div className="col-4"><img src={supermarket} className="App-logo" alt="cart" /></div>
+                <div className="col-1"></div>
+              </div>
+            </div>
+            <div className="col-8 shoppingList">
+              {this.state.products
+                .filter(element => {
+                  return element.amount != 0;
+                })
+                .map((element, i) => {
+                  return (
+                    <Cart
+                      name={element.name}
+                      price={element.price}
+                      amount={element.amount}
+                      index={i}
+                      subtotal={element.subtotal}
+                    />
+                  );
+                })}
+              <div className="row">
+                <div className="col-1"></div>
+                <div className="col-6  products">
+                  Total price: {this.state.total}&#x20aa;
+                </div>
+                <div className="col-5"></div>
+              </div>
+              <div className="row">
+              <div className="col-8"></div>
+              <div className="col-3"><button className="spListDesc" onClick={this.buy}>Buy</button></div>
+              <div className="col-1"></div>
+              
+              </div>
+            </div>
           </div>
         </div>
       );
     } else {
       return (
         <div className="row homeRow">
-          <div className="col-9 shoppingList">
+          <div className="col-10 shoppingList">
             <div className="row">
               <div className="col-1"></div>
               <div className="col-6  products">List of products</div>
@@ -103,8 +120,8 @@ export default class App extends Component {
               );
             })}
           </div>
-          <div className="col-3">
-            <div className="spListDesc">Add</div>
+          <div className="col-2">
+            <div className="spListDesc spListDescAdd">Add</div>
           </div>
         </div>
       );

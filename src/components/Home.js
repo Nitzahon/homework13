@@ -26,7 +26,6 @@ export default class Home extends Component {
                     <p className="col-2 prodPrice">{this.state.price}&#x20aa;</p>
                     <div className="col-1"></div>
                     <button onClick={this.addItem} className="col-1 btn-info bigP">+</button>
-                    {/* <div onClick={this.addItem} className="col-1 bigP">+</div> */}
                 </div>
 
                 <div className="col-5"></div>

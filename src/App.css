@@ -27,9 +27,10 @@
   font-size: 2rem;
   background-color: rgb(65, 105, 225);
 }
-.bigP:hover{
+.bigP:hover, .bigP:focus, .bigP:active{
   background-color: rgb(65, 85, 255);
 }
+
 .prodName {
   text-align: left;
 }
@@ -57,7 +58,9 @@ body {
   background-color: royalblue;
   width: 30%;
   text-align: center;
-  margin-top: 33%;
   font-size: 2rem;
   font-weight: 700;
+}
+.spListDescAdd{
+  margin-top: 33%;
 }
